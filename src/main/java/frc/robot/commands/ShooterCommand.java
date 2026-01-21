@@ -22,26 +22,31 @@ public class ShooterCommand extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    System.out.println("inside initialize");
     shooter.runShooter();
   }
-
+  
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    
+    System.out.println("inside execute");
 
+    
+  }
+  
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    double startTime = System.currentTimeMillis();
-    while (controller.getXButton()){
-         }
-
+    System.out.println("inside end");
+    
     shooter.stopShooter();
   }
-
+  
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return true;
+    System.out.println("inside isFinished");
+    return false;
   }
 }

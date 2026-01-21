@@ -10,11 +10,13 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ShooterSubsytem extends SubsystemBase {
   private final XboxController controller = new XboxController(0);
+  // private final TalonFX shooter  = new TalonFX(10);
   private final TalonFX shooter  = new TalonFX(10);
 
 
   public void runShooter(){
-    shooter.set(-.3);
+    // shooter.set(-.3);
+    shooter.set(.3);
   }
 
   public void stopShooter(){

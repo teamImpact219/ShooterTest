@@ -10,18 +10,29 @@ import frc.robot.subsystems.ShooterSubsytem;
 import frc.robot.commands.ShooterCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
-
 public class RobotContainer {
 
   private final CommandXboxController joystick = new CommandXboxController(0);
   private final ShooterSubsytem shooter = new ShooterSubsytem();
   private final ShooterCommand shoot = new ShooterCommand(shooter);
+
   public RobotContainer() {
     configureBindings();
   }
 
   private void configureBindings() {
-    joystick.x().onTrue(shoot);
+    bindJoystickX();
+  }
+
+  private void bindJoystickX() {
+     joystick.x().whileTrue(shoot); //hold x down to shoot using ShooterCommand
+
+    // hold x down to shoot using Command API factorie
+    // joystick.x().whileTrue(
+    //     shooter.startEnd(
+    //         () -> shooter.runShooter(), // Start action
+    //         () -> shooter.stopShooter() // End action
+    //     ));
   }
 
   public Command getAutonomousCommand() {
