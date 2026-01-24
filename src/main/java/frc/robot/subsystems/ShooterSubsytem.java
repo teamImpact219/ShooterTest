@@ -16,7 +16,7 @@ public class ShooterSubsytem extends SubsystemBase {
 
   public void runShooter(){
     // shooter.set(-.3);
-    shooter.set(.3);
+    shooter.set(-.35);
   }
 
   public void stopShooter(){
