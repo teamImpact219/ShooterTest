@@ -5,6 +5,8 @@
 package frc.robot.subsystems;
 import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj.XboxController;
+import com.revrobotics.spark.SparkFlex;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -12,15 +14,19 @@ public class ShooterSubsytem extends SubsystemBase {
   private final XboxController controller = new XboxController(0);
   // private final TalonFX shooter  = new TalonFX(10);
   private final TalonFX shooter  = new TalonFX(10);
+   private final SparkFlex shooter1  = new SparkFlex(12, MotorType.kBrushless);
 
 
   public void runShooter(){
     // shooter.set(-.3);
     shooter.set(.3);
+    shooter1.set(.3);
+    
   }
 
   public void stopShooter(){
     shooter.set(0);
+    shooter1.set(.3);
   }
 
 
